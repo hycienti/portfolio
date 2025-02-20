@@ -31,6 +31,7 @@ function renderProjects() {
         imageUrl:
           "https://framerusercontent.com/images/p9b4Yt5j294Q5MxCkzsNKEdpP4.png?scale-down-to=2048",
         altText: "Pays app",
+        url: "https://www.pays-app.io/",
       },
       {
         title: "Pluralcode Academy",
@@ -39,6 +40,7 @@ function renderProjects() {
         imageUrl:
           "https://framerusercontent.com/images/hWmSRaemuT7qKockEAYea3R6TXo.png?scale-down-to=2048",
         altText: "Pluralcode Academy",
+        url: "http://pluralcode.com.ng/",
       },
       {
         title: "CloudP2P",
@@ -47,6 +49,7 @@ function renderProjects() {
         imageUrl:
           "https://framerusercontent.com/images/VXMBZOLamuP9rS5j3cLGvN91xo.png?scale-down-to=2048",
         altText: "CloudP2P",
+        url: "https://www.cloudp2p.io/",
       },
     ];
 
@@ -71,8 +74,15 @@ function renderProjects() {
         const projectDescription = document.createElement('p');
         projectDescription.textContent = project.description;
 
+        const projectButton = document.createElement('a');
+        projectButton.href = project.url;
+        projectButton.target = '_blank';
+        projectButton.textContent = 'Learn More';
+        projectButton.className = 'project-button';
+
         projectContent.appendChild(projectTitle);
         projectContent.appendChild(projectDescription);
+        projectContent.appendChild(projectButton);
         projectCard.appendChild(projectImage);
         projectCard.appendChild(projectContent);
         projectsGridElement.appendChild(projectCard);
